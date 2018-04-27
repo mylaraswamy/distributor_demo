@@ -1,0 +1,26 @@
+<br><br>
+<div class="container">
+  <h3> DISTRIBUTOR DEMO </h3><br>
+  <div class="col-md-4">
+    <%= form_tag distributor_permission_path, remote: true do%>
+      <div class="form-group">
+        <%= label_tag "DISTRIBUTORS"%>
+        <%= select_tag "distributor_name", options_for_select(@distributors.map {|k, v| [k, k]}), class: "form-control", include_blank: 'Select' %>
+      </div>
+      <div class="form-group">
+        <%= label_tag "Country"%>
+        <%= select_tag "country", options_for_select(@countries.map {|k, v| [k, k]}), class: "form-control", include_blank: 'Select' %>
+      </div>
+      <div class="form-group">
+        <%= label_tag "Location"%>
+        <%= select_tag "location", options_for_select(@cities.map {|k, v| [k, k]}), class: "form-control", include_blank: 'Select' %>
+      </div>
+      <div class="form-group">
+        <%= submit_tag "Submit", class: "btn btn-primary"%>
+      </div>
+    <%end%><br>
+  </div>
+  <div class="col-md-6">
+    <div id="error_message"></div>
+  </div>
+</div>
